@@ -12,14 +12,68 @@ orden de ejecución de los mismos junto con los apellidos y nombre de los alumno
 
 
 gamma-
-1) a traves del comando pull (LinkDelRepo). que es una combinacion de fetch + merge
-2) si, alfa pudo actualizar su fork a la ultima version del repositori ode beta
-3)  si, Gamma pudo actualizar su fork a la ultima version del repositori ode Alfa
-4) No, no se pierder se hace un marge y se resuelve el conflicto
-5) 	Git init
-	Git clone
-	Git pull
-	Git push
-	Git add 
-	Git commit
-	Git status
+A) a traves del comando pull (LinkDelRepo). que es una combinacion de fetch + merge
+B) si, alfa pudo actualizar su fork a la ultima version del repositori ode beta
+C)  si, Gamma pudo actualizar su fork a la ultima version del repositori ode Alfa
+D) No, no se pierder se hace un marge y se resuelve el conflicto
+E) 	
+    *1
+	1. beta $git init
+	2. Beta $git add .
+	3. Beta $git commit -m"beta cree el repositorio con los archvos fork.txt y readme.txt"
+	4. Beta $git push
+
+    *2
+
+	6. gamma $git clone (link repositorio de beta)
+	7. gamma $git remote add upstream git://github.com/beta/TP_SO_i2_Equipo
+	8. Gamma $git add .
+	9. Gamma $git commit -m"gamma agrege mis datos en fork.txt"
+	10. gamma $git push
+	--- hacer pull request en la pagina de github
+    *3
+
+	11. Alfa $git clone (link repositorio de beta)
+	13. gamma $git remote add upstream git://github.com/beta/TP_SO_i2_Equipo
+	14. Alfa $git add .
+	15. Alfa $git commit -m"alfa agrege mis datos en fork.txt"
+	16. Alfa $git push
+
+	--- hacer pull request en la pagina de github
+
+	--- beta acepta los pull request y hace el merge
+    *4 
+	17.beta $git add /NuevoDato.txt
+	18.beta $git commit -m "beta cree el archivo NuevoDato.txt"
+	19.beta $git push
+
+	20.gamma $git pull upstream
+	21.alfa $git pull upstream
+
+    *5
+
+	21.beta $git add /respuesta_I2_EquipoX
+	22.beta $git commit -m "beta cree el archivo respuesta_I2_EquipoX.txt"
+	23.beta $git push
+
+	24.gamma $git pull upstream
+	25.gamma $git add /respuesta_I2_EquipoX
+	26.gamma $git commit /m "gamma respondi las primeras dos preguntas del cuestionario"
+
+	--- hacer pull request en la pagina de github
+	--- beta acepta los pull request y hace el merge
+
+	27. beta $git push
+	28. beta $git add /respuesta_I2_EquipoX
+	29. beta $git commit -m "respondi la tercera y cuarta pregunta del cuuestionario"
+
+
+
+	30.Alfa $git pull upstream
+	31.Alfa $git add /respuesta_I2_EquipoX
+	32.Alfa $git commit /m "gamma respondi ultimas dos preguntas del cuestionario"
+	33.Alfa $git push
+
+	--- hacer pull request en la pagina de github
+	--- beta acepta los pull request y hace el merge
+
